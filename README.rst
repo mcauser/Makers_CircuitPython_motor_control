@@ -2,7 +2,7 @@ Introduction
 ============
 
 .. image:: https://readthedocs.org/projects/makers-circuitpython-motor-control/badge/?version=latest
-    :target: https://circuitpython.readthedocs.io/projects/motor-control/en/latest/
+    :target: https://makers-circuitpython-motor-control.readthedocs.io/en/latest/
     :alt: Documentation Status
 
 .. image:: https://img.shields.io/discord/327254708534116352.svg
