@@ -28,7 +28,7 @@ install:
   - pip install --force-reinstall pylint==1.9.2
 
 script:
-  - pylint makers_motorcontrol.py
+  - pylint makers_motor_control.py
   - ([[ ! -d "examples" ]] || pylint --disable=missing-docstring,invalid-name,bad-whitespace examples/*.py)
-  - circuitpython-build-bundles --filename_prefix makers-circuitpython-motorcontrol --library_location .
+  - circuitpython-build-bundles --filename_prefix makers-circuitpython-motor-control --library_location .
   - cd docs && sphinx-build -E -W -b html . _build/html
