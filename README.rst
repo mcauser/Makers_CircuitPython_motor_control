@@ -1,8 +1,8 @@
 Introduction
 ============
 
-.. image:: https://readthedocs.org/projects/makers-circuitpython-motorcontrol/badge/?version=latest
-    :target: https://circuitpython.readthedocs.io/projects/motorcontrol/en/latest/
+.. image:: https://readthedocs.org/projects/makers-circuitpython-motor-control/badge/?version=latest
+    :target: https://circuitpython.readthedocs.io/projects/motor-control/en/latest/
     :alt: Documentation Status
 
 .. image:: https://img.shields.io/discord/327254708534116352.svg
@@ -13,13 +13,19 @@ Introduction
     :target: https://travis-ci.org/fmorton/Makers_CircuitPython_MotorControl
     :alt: Build Status
 
-.. todo:: Describe what the library does.
+CircuitPython helper for Circuit Playground Express/Crickit motor control
+
+Examples of products to use this library with:
+
+* `Circuit Playground Express <https://www.adafruit.com/product/3333>`_
+* `Adafruit CRICKIT for Circuit Playground Express <https://www.adafruit.com/product/3093>`_
+
 
 Dependencies
 =============
 This driver depends on:
 
-* `Adafruit CircuitPython <https://github.com/adafruit/circuitpython>`_
+* `Adafruit CircuitPython with Crickit support <https://github.com/adafruit/circuitpython>`_
 
 Please ensure all dependencies are available on the CircuitPython filesystem.
 This is easily achieved by downloading
@@ -28,7 +34,23 @@ This is easily achieved by downloading
 Usage Example
 =============
 
-.. todo:: Add a quick, simple example. It and other examples should live in the examples folder and be included in docs/examples.rst.
+.. code-block:: python
+
+  import time
+  import makers_motor_control
+
+  motors = makers_motor_control.MotorControl()
+
+  motors.set_throttle(0.0, 0.0)
+
+  while True:
+      motors.set_throttle(0.5, 0.5, 0.25, True)   # forward
+      motors.set_throttle(-0.5, -0.5, 0.25, True) # backward
+      motors.set_throttle(0.0, 0.5, 0.25, True)   # left
+      motors.set_throttle(0.5, 0.0, 0.25, True)   # right
+
+      time.sleep(5.0)
+
 
 Contributing
 ============
@@ -62,7 +84,7 @@ Then run the build:
 
 .. code-block:: shell
 
-    circuitpython-build-bundles --filename_prefix makers-circuitpython-motorcontrol --library_location .
+    circuitpython-build-bundles --filename_prefix makers-circuitpython-motor-control --library_location .
 
 Sphinx documentation
 -----------------------

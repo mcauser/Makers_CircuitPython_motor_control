@@ -42,6 +42,7 @@ Implementation Notes
   
 """
 
+import time
 from adafruit_crickit import crickit
 
 __version__ = "0.0.0-auto.0"
@@ -50,6 +51,22 @@ __repo__ = "https://github.com/fmorton/Makers_CircuitPython_motor_control.git"
 
 """
   Demo code for Circuit Playground Express + Crickit:
+
+
+  import time
+  import makers_motor_control
+
+  motors = makers_motor_control.MotorControl()
+
+  motors.set_throttle(0.0, 0.0)
+
+  while True:
+      motors.set_throttle(0.5, 0.5, 0.5, True)   # forward
+      motors.set_throttle(-0.5, -0.5, 0.5, True) # backward
+      motors.set_throttle(0.0, 0.5, 0.5, True)   # left
+      motors.set_throttle(0.5, 0.0, 0.5, True)   # right
+
+      time.sleep(5.0)
 """
 
 class MotorControl:
@@ -58,7 +75,7 @@ class MotorControl:
         self.right_motor = crickit.dc_motor_2
 
 
-    def stop_motor(self):
+    def stop_motors(self):
         self.left_motor.throttle = 0.0
         self.right_motor.throttle = 0.0
 
@@ -69,4 +86,4 @@ class MotorControl:
         if sleep_amount > 0.0:
             time.sleep(sleep_amount)
         if stop_after_moving:
-            self.stop_motor()
+            self.stop_motors()
