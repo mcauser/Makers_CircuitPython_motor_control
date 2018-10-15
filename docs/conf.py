@@ -16,7 +16,7 @@ extensions = [
     'sphinx.ext.todo',
 ]
 
-autodoc_mock_imports = ["crickit"]
+autodoc_mock_imports = ["adafruit_crickit", "crickit"]
 
 intersphinx_mapping = {'python': ('https://docs.python.org/3.4', None),'CircuitPython': ('https://circuitpython.readthedocs.io/en/latest/', None)}
 
