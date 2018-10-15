@@ -39,7 +39,7 @@ Implementation Notes
 
 * Adafruit CircuitPython firmware for the supported boards:
   https://github.com/adafruit/circuitpython/releases
-  
+
 """
 
 import time
@@ -70,20 +70,23 @@ __repo__ = "https://github.com/fmorton/Makers_CircuitPython_motor_control.git"
 """
 
 class MotorControl:
+    """Crickit motor control helper class"""
     def __init__(self):
         self.left_motor = crickit.dc_motor_1
         self.right_motor = crickit.dc_motor_2
 
 
     def stop_motors(self):
+        """Stop both motors"""
         self.left_motor.throttle = 0.0
         self.right_motor.throttle = 0.0
 
 
-    def set_throttle(self, left_motor_throttle, right_motor_throttle, sleep_amount = 0.0, stop_after_moving = False):
-        self.left_motor.throttle = left_motor_throttle
-        self.right_motor.throttle = right_motor_throttle
-        if sleep_amount > 0.0:
-            time.sleep(sleep_amount)
+    def set_throttle(self, left_throttle, right_throttle, delay=0.0, stop_after_moving=False):
+        """Set the motor throttles"""
+        self.left_motor.throttle = left_throttle
+        self.right_motor.throttle = right_throttle
+        if delay > 0.0:
+            time.sleep(delay)
         if stop_after_moving:
             self.stop_motors()

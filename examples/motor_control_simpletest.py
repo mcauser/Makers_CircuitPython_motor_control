@@ -1,3 +1,4 @@
+"""Motor control test"""
 import time
 import makers_motor_control
 
