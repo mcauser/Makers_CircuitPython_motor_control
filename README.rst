@@ -9,8 +9,8 @@ Introduction
     :target: https://discord.gg/nBQh6qu
     :alt: Discord
 
-.. image:: https://travis-ci.org/fmorton/Makers_CircuitPython_MotorControl.svg?branch=master
-    :target: https://travis-ci.org/fmorton/Makers_CircuitPython_MotorControl
+.. image:: https://travis-ci.org/fmorton/Makers_CircuitPython_motor_control.svg?branch=master
+    :target: https://travis-ci.org/fmorton/Makers_CircuitPython_motor_control
     :alt: Build Status
 
 CircuitPython helper for Circuit Playground Express/Crickit motor control
